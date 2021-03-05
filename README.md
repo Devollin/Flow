@@ -25,12 +25,7 @@
 local Flow = require(game:GetService("ReplicatedStorage").Flow) -- Or wherever you want to put it!
 
 local partStart = workspace.Start
-local partMiddle = workspace.Middle
 local partEnd = workspace.End
-
-local startCFrame = partStart.CFrame
-local middleCFrame = partMiddle.CFrame
-local endCFrame = partEnd.CFrame
 
 local dictionary = {hi = 10, bye = UDim2.new(0, 500, 0, 300)}
 
