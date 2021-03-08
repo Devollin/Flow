@@ -2,7 +2,7 @@
 
 --[[======================================================================
 
-Presets | Written by Devi (Devollin) | 2021 | v1.0.0
+Presets | Written by Devi (Devollin) | 2021 | v1.0.1
 	Description: Contains a list of user-defined and pre-designated 
 		flow modifiers.
 
@@ -35,24 +35,23 @@ function interface:Merge(name: any, modifiers: any)
 	modifiers = modifiers or {}
 	local preset = self:GetPreset(name)
 	local result = {}
-	
 	for index, value in pairs(presets.Default) do
-		local capture = modifiers[string.gsub(index, "%l", "")]
+		local stringIndex, count = string.gsub(index, "%l", "")
+		local capture = modifiers[stringIndex]
 		if capture ~= nil then
 			result[index] = capture
 		else
-			if preset[index] ~= nil then
-				result[index] = preset[index]
+			if modifiers[index] ~= nil then
+				result[index] = modifiers[index]
 			else
-				if modifiers[index] ~= nil then
-					result[index] = modifiers[index]
+				if preset[index] ~= nil then
+					result[index] = preset[index]
 				else
 					result[index] = value
 				end
 			end
 		end
 	end
-	
 	return result
 end
 
