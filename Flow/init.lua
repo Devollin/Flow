@@ -2,7 +2,7 @@
 
 --[[======================================================================
 
-Flow | Written by Devi (Devollin) | 2021 | v1.0.0
+Flow | Written by Devi (Devollin) | 2021 | v1.0.1
 	Description: Interface for tweening.
 
 ========================================================================]]
@@ -69,9 +69,16 @@ function flow.new(targets: any, goals: any, modifiers: any)
 			table.insert(applicators, applier(targets, property, goal))
 		end
 	end
+	local newTargets = typeof(targets) == "table" and {} or targets
+	if typeof(targets) == "table" then
+		for index, target in pairs(targets) do
+			newTargets[index] = target
+		end
+	end
+	
 
 	local self = setmetatable({
-		targets = targets,
+		targets = newTargets,
 		goals = goals,
 		applicators = applicators,
 		connection = game:GetService("RunService")[modifiers.StepType]:Connect(function() end),
