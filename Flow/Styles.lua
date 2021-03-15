@@ -145,7 +145,7 @@ local EasingFunctions = setmetatable({
 			T = 1 - (T * 2)
 			return (1 - T * T * T) / 2
 		else
-			T *= 2 - 1
+			T = (T * 2) - 1
 			return T * T * T / 2 + 0.5
 		end
 	end;
