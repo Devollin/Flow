@@ -2,7 +2,7 @@
 
 --[[======================================================================
 
-Styles | Written by boatbomber (Zack Ovits) for BoatTween (https://github.com/boatbomber/BoatTween) | 2020 | v1.0.0
+Styles | Written by boatbomber (Zack Ovits) for BoatTween (https://github.com/boatbomber/BoatTween) | 2020 | v1.0.1
 	Description: Contains a list of flow styles.
 
 ========================================================================]]
