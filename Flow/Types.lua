@@ -2,7 +2,7 @@
 
 --[[======================================================================
 
-Types | Written by Devi (Devollin) | 2021 | v1.0.0
+Types | Written by Devi (Devollin) | 2021 | v1.0.1
 	Description: Contains a list of userdata functions used in easing.
 
 ========================================================================]]
@@ -56,7 +56,7 @@ return {
 	["Region3int16"] = function(i: Region3, g: Region3, t: number)
 		local m1 = (i.CFrame.RightVector * (i.Size.Z / 2)) + (i.CFrame.UpVector * (i.Size.Y / 2)) - (i.CFrame.LookVector * (i.Size.X / 2))
 		local m2 = (g.CFrame.RightVector * (g.Size.Z / 2)) + (g.CFrame.UpVector * (g.Size.Y / 2)) - (g.CFrame.LookVector * (g.Size.X / 2))
-		local a, b, c, d = i.CFrame.Position - m1, i.CFrame.Position + m1, g.CFrame.Position - m2, g.CFrame.Position + m
+		local a, b, c, d = i.CFrame.Position - m1, i.CFrame.Position + m1, g.CFrame.Position - m2, g.CFrame.Position + m2
 		local e, f = a:Lerp(c, t), b:Lerp(d, t)
 		return Region3int16.new(Vector3int16.new(e.X, e.Y, e.Z), Vector3int16.new(f.X, f.Y, f.Z))
 	end,
